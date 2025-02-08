@@ -1,0 +1,20 @@
+[
+    {
+        "prompt": "In what year was the first Star Wars movie released?",
+        "answer": 1977,
+        "correctAnswerOffset": 0,
+        "closeAnswerOffset": 5
+    },
+    {
+        "prompt": "At the time of release, Titanic (1997) was the most expensive movie ever made.  How much did it cost to produce in US Dollars? (Answer in millions of $U.S.)",
+        "answer": "210",
+        "correctAnswerOffset": 50,
+        "closeAnswerOffset": 100
+    },
+    {
+        "prompt": "How many people did Arnold Schwarzenegger kill on screen in all of his movie combined?  (Data by alloutabubblegum.com)",
+        "answer": 895,
+        "correctAnswerOffset": 200,
+        "closeAnswerOffset": 500
+    }
+]
