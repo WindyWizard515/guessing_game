@@ -63,7 +63,7 @@ export default function Join() {
                     <button type="submit" onClick={submitPlayerName}>Join game</button>
                 </p>
             </div> }
-            { addPlayerSuccess === true ? <p>You threw your hat into the ring! the page will redirect when the game
+            { addPlayerSuccess === true ? <p>You threw your hat into the ring! The page will redirect when the game
                 starts.</p> : null }
             { addPlayerSuccess === false ? <p>An error occured.</p> : null }
         </div>

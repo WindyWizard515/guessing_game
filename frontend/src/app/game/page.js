@@ -38,6 +38,7 @@ export default function Game() {
         if (timeLeft <= 0) {
             return
         }
+        
         const interval = setInterval(() => {
             setTimeLeft(timeLeft - 1)
         }, 1000)

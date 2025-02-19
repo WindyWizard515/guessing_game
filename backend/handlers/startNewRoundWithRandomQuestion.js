@@ -38,5 +38,6 @@ export const startNewRoundWithRandomQuestion = (request, response) => {
     return response.status(200).send({
         round: newRound,
         questions: notYetAskedQuestions[randomIdx],
+        players: gameState.players
     })
 } 
