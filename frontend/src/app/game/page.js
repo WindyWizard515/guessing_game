@@ -19,6 +19,7 @@ export default function Game() {
     const [prompt, setPrompt] = useState(undefined)
     const [timeLeft, setTimeLeft] = useState(ROUND_LENGTH)
     const [answersResponse, setAnswersResponse] = useState(undefined)
+    const [players, setPlayers] = useState(undefined)
 
     useEffect(() => {
         startRoundWithRandomQuestion()
@@ -27,6 +28,7 @@ export default function Game() {
                 router.push("/gameover")
             }
             console.log("Response from starting random round", response)
+            setPlayers(response)
             setPrompt(response.data.questions.prompt)
         })
         .catch((error) => {
