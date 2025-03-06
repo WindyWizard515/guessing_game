@@ -1,7 +1,7 @@
 "use client"
 
 // Import modules from react
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 // Import other modules
 import * as cookieCutter from "cookie-cutter"
@@ -9,12 +9,16 @@ import * as cookieCutter from "cookie-cutter"
 // Import our files
 import { makeGuess } from "../../requests/makeGuess"
 import { getCurrentRound } from "@/requests/getCurrentRound"
+import { question } from "../game/page.js"
 
 export default function Client() {
 
     const [guess, setGuess] = useState(undefined)
     const [madeGuess, setMadeGuess] = useState(undefined)
     const [roundId, setRoundId] = useState(undefined)
+    const [prompt, setPrompt] = useState(undefined)
+
+    setPrompt(question)
 
     const handleGuess = (event) => {
         setGuess(event.target.value)
@@ -48,7 +52,9 @@ export default function Client() {
     }
 
     const makeAGuess = () => {
-        return(<div>            <h1>Make a guess</h1>
+        return(<div>
+            <h1>Make a guess</h1>
+            <h2>{prompt}</h2>
             <p>
                 <input type="text" onChange={handleGuess}/>
             </p>
@@ -60,7 +66,8 @@ export default function Client() {
 
     const madeAGuess = () => {
         return(<div>
-            <h1>Thanks For Guessing</h1>
+            <h1>Question Was: </h1>
+            <h2>Thanks For Guessing</h2>
             <p>You guessed <b>{guess}</b></p>
             <p>Wait untill the end of the round to guess again</p>
             </div>
@@ -89,6 +96,7 @@ export default function Client() {
 
     return (
         <div>
+
             { madeGuess ? madeAGuess() : makeAGuess()}
         </div>
 

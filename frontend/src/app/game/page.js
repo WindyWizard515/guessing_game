@@ -16,7 +16,7 @@ const TIME_BEFORE_NEXT_ROUND = 10000 // In milliseconds
 export default function Game() {
     const router = useRouter()
 
-    const [prompt, setPrompt] = useState(undefined)
+    const [question, setQuestion] = useState(undefined)
     const [timeLeft, setTimeLeft] = useState(ROUND_LENGTH)
     const [answersResponse, setAnswersResponse] = useState(undefined)
     const [players, setPlayers] = useState(undefined)
@@ -29,7 +29,7 @@ export default function Game() {
             }
             console.log("Response from starting random round", response)
             setPlayers(response)
-            setPrompt(response.data.questions.prompt)
+            setQuestion(response.data.questions.prompt)
         })
         .catch((error) => {
             console.error("Error starting random round", error)
@@ -109,7 +109,7 @@ export default function Game() {
         <div>
             {timeLeft <= 0 ? renderAnswers()  : <div>
                 <h1>Question!</h1>
-                <p className="question">{prompt}</p>
+                <p className="question">{question}</p>
                 <p>Make a guess on your device! Time left: {timeLeft}</p>
                 { timeLeft <= 0 ? null : <img src="images/secret_agent_guessing.jpg" alt="Secret Agent"/> }
             </div>}
